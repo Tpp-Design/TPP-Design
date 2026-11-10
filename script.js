@@ -81,6 +81,16 @@
     statsObs.observe(statsBar);
   }
 
+  /* ── Paket-Buttons: Formular vorausfüllen ───────── */
+  document.querySelectorAll('.paket-cta[data-service]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const serviceSelect = document.getElementById('service');
+      if (serviceSelect) {
+        serviceSelect.value = btn.dataset.service;
+      }
+    });
+  });
+
   /* ── Contact form ────────────────────────────── */
   const form      = document.getElementById('contactForm');
   const successEl = document.getElementById('formSuccess');
