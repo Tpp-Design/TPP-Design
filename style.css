@@ -574,7 +574,7 @@ a.cdetail:hover { border-color: rgba(217,78,30,0.3); transform: translateX(4px);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .paket-card {
@@ -592,15 +592,6 @@ a.cdetail:hover { border-color: rgba(217,78,30,0.3); transform: translateX(4px);
 .paket-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 48px rgba(28,24,22,0.10);
-}
-
-.paket-card--featured {
-  border-color: var(--accent);
-  box-shadow: 0 8px 32px rgba(217,78,30,0.12);
-}
-
-.paket-card--featured:hover {
-  box-shadow: 0 16px 48px rgba(217,78,30,0.18);
 }
 
 .paket-card__badge {
@@ -685,7 +676,7 @@ a.cdetail:hover { border-color: rgba(217,78,30,0.3); transform: translateX(4px);
 }
 
 .paket-cta {
-  margin-top: 4px;
+  margin-top: auto;
   text-align: center;
   justify-content: center;
 }
