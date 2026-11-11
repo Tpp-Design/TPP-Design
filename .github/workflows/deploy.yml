@@ -1,25 +1,27 @@
-name: Deploy to easyname
+name: Deploy to Easyname via FTP
 
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
   deploy:
+    name: Upload to Server
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
+          server: e133904-ftp.services.easyname.eu
+          username: 202249ftp1
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          server-dir: ${{ secrets.FTP_DIR }}
+          server-dir: /html/tpp-design/
           exclude: |
             **/.git*
             **/.git*/**
+            **/node_modules/**
             .github/**
-            .gitignore
-            *.md
